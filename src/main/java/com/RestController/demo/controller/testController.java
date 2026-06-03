@@ -1,8 +1,6 @@
 package com.RestController.demo.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/demo")
@@ -12,4 +10,11 @@ public class testController {
     public String firstTest() {
         return "Pong";
     }
+
+    @PostMapping("/nombre")
+    public String recibirNombre(@RequestBody String nombre) {
+        return "Hola," + nombre ;
+    }
+
+
 }
